@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=MuseoModerno:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+@keyframes pulse {
+    0% {transform: scale(1); /* Normal size */}
+    50%{transform: scale(1.2);}
+    100%{transform: scale(1);}
+    }
+
+.active_size_change{
+    display: inline-block; /* Ensure proper sizing behavior */
+    animation: pulse 3s infinite; 
+}
+
+body{
+    background-color: rgb(24, 27, 54);
+    font-family: 'MuseoModerno';
+}
+
+h1{
+    text-align: center;
+    color: rgb(207, 196, 42);
+    font-family: 'MuseoModerno';
+    letter-spacing: 20px;
+    font-size: 40px;
+    text-shadow: 5px 5px 5px rgb(158, 123, 7);
+}
+
+h2{
+    text-align: center;
+    color: rgb(255, 254, 172);
+    font-family: 'MuseoModerno';
+    letter-spacing: 5px;
+    font-size: 20px;
+
+    width: 80%;
+    
+}
+
+h2#current_player{
+    margin-bottom: 40px;
+}
+
+
+
+
+hr#one{
+   width: 50%; 
+   height: 2px;
+   background-color: rgb(207, 196, 42);
+   border-color: rgb(0,0,0);
+    
+}
+
+div#main{
+    margin-top: 10px;
+
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(3, 1fr);   /* 3 equal rows */
+    gap: 5px; /* Optional: spacing between cells */
+    width: 300px; /* Grid width */
+    height: 300px; /* Grid height */
+    
+    background-color: rgba(222, 234, 153, 0.425);
+}
+
+.cell {
+    
+    display: flex;          /* Center content in cells */
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;        /* Adjust font size for X or O */
+    cursor: pointer; 
+    background-color: rgb(24, 27, 54);
+
+    color: rgba(255, 255, 0, 0.724);
+
+    font-size: 300%;
+    
+}
+
+.cell:hover{
+    background-color: rgb(44, 49, 99);
+    transition: background-color 0.7s ease, color 0.7s ease;
+}
+
+.cell.disabled:hover{
+    background-color: rgb(24, 27, 54);
+    transition: background-color 0.7s ease, color 0.7s ease;
+    cursor: not-allowed;
+}
+
