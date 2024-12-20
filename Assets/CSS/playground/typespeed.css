@@ -1,0 +1,74 @@
+@font-face {
+    font-family: 'ost_bold'; /* The name you'll use in your CSS */
+    src: url('../../Fonts/ostrich-sans.sans-inline.otf') format('opentype'); /* Path to the .otf file */ }
+@font-face {
+    font-family: 'ost_light'; /* The name you'll use in your CSS */
+    src: url('../../Fonts/ostrich-sans.sans-light.otf') format('opentype'); /* Path to the .otf file */ }
+@font-face {
+    font-family: 'ost_italic'; /* The name you'll use in your CSS */
+    src: url('../../Fonts/ostrich-sans.sansinline-italic.ttf') format('truetype'); /* Path to the .otf file */ }
+
+
+body{
+    background-color: #EEEBDD;
+    margin: 0;
+    padding: 0;
+}
+
+body .marquee-text {
+    overflow: clip;
+  }
+  
+body .marquee-text  .marquee-text-track {
+    display: flex;
+    padding-left: 1.5rem;
+    gap: 1.5rem;
+    width: max-content;
+    animation: marquee-move-text var(--speed, 20s) linear infinite var(
+        --direction,
+        forwards
+      );
+  }
+
+body .marquee-text  #dots {
+    display: flex;
+    padding-left: 1.5rem;
+    gap: 1.5rem;
+    width: max-content;
+    animation: marquee-move-text var(--speed, 7s) linear infinite var(
+        --direction,
+        forwards
+      );
+     
+
+    
+  }
+
+#dot_container{
+    position: relative;
+    top: -50px;
+    color: #810000;
+    
+    
+}
+#dot_container p{
+    font-weight: bold;
+    font-size: 50px;
+}
+  
+body .marquee-text  p {
+    font-family: 'ost_italic';
+    font-size: 70px;
+    font-weight: lighter;
+
+    padding: 0rem 0rem;
+    margin: 10px;
+    height: 100%;
+  }
+  
+
+  @keyframes marquee-move-text {
+    to {
+      transform: translateX(-50%);
+    }
+  }
