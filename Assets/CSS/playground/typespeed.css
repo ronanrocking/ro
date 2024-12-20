@@ -10,19 +10,21 @@
 
 
 body{
-    background-color: #EEEBDD;
+    background-color: #1B1717;
     margin: 0;
     padding: 0;
 }
 
 body .marquee-text {
     overflow: clip;
+    background-color: #1B1717;
+    margin-top: 10px;
   }
   
 body .marquee-text  .marquee-text-track {
     display: flex;
     padding-left: 1.5rem;
-    gap: 1.5rem;
+    gap: 0rem 1.5rem;
     width: max-content;
     animation: marquee-move-text var(--speed, 20s) linear infinite var(
         --direction,
@@ -46,20 +48,24 @@ body .marquee-text  #dots {
 
 #dot_container{
     position: relative;
-    top: -50px;
-    color: #810000;
+    top: -70px;
+    
+    z-index: -1;
+    padding-bottom: 20px;
     
     
 }
 #dot_container p{
     font-weight: bold;
-    font-size: 50px;
+    font-size: 70px;
+    color: #EEEBDD;
 }
   
 body .marquee-text  p {
     font-family: 'ost_italic';
     font-size: 70px;
-    font-weight: lighter;
+    font-weight: bold;
+    color: #810000;
 
     padding: 0rem 0rem;
     margin: 10px;
