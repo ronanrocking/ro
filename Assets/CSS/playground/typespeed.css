@@ -1,24 +1,20 @@
 @font-face {
-    font-family: 'ost_bold'; /* The name you'll use in your CSS */
-    src: url('../../Fonts/ostrich-sans.sans-inline.otf') format('opentype'); /* Path to the .otf file */ }
-@font-face {
-    font-family: 'ost_light'; /* The name you'll use in your CSS */
-    src: url('../../Fonts/ostrich-sans.sans-light.otf') format('opentype'); /* Path to the .otf file */ }
-@font-face {
     font-family: 'ost_italic'; /* The name you'll use in your CSS */
-    src: url('../../Fonts/ostrich-sans.sansinline-italic.ttf') format('truetype'); /* Path to the .otf file */ }
+    src: url('../../Fonts/Antipasto_extralight.otf') format('truetype'); /* Path to the .otf file */ }
 
 
 body{
     background-color: #1B1717;
     margin: 0;
     padding: 0;
+
+    font-family: "ost_italic";
 }
 
 body .marquee-text {
     overflow: clip;
     background-color: #1B1717;
-    margin-top: 10px;
+    margin-top: 20px;
   }
   
 body .marquee-text  .marquee-text-track {
@@ -48,7 +44,7 @@ body .marquee-text  #dots {
 
 #dot_container{
     position: relative;
-    top: -70px;
+    top: -60px;
     
     z-index: -1;
     padding-bottom: 20px;
@@ -87,7 +83,7 @@ body div#main{
 }
 
 body div#typing_container{
-  height: 40vh;
+  height: max-content;
   width: 70vw;
 
   display: flex;
@@ -100,21 +96,92 @@ body div#typing_container{
 }
 
 body div#typing_container div#text{
-  height: 70%;
+  height: max-content;
   width: 100%;
 
   background-color: #EEEBDD;
   border-radius: 25px;
 
+  overflow: hidden;
+
+
+
+
+}
+body div#typing_container div#text p{
+  text-align: center;
+  justify-content: center;
+
+  padding: 10px 70px;
+  font-size: 25px;
+  letter-spacing: 1px;
+
+  overflow: hidden;
 }
 
 body div#typing_container div#typing{
   width: 100%;
   height: 50px;
-  border-radius: 25px;
+  border-radius: 2px;
+  
+  margin-top: 15px;
+  border: 0px solid;
 
-  background-color: #e4dec1;
+  background-color: none;
+  
 }
+
+
+
+/* Base styling for input field */
+body div#typing_container div#typing #typebar {
+  margin: 0;
+  padding: 0px; /* Add padding to space the text inside the input */
+  width: 100%;
+  height: 100%;
+
+  color: #000000; /* Text color set to black while typing */
+  border-radius: 25px;
+  border: 0px solid #810000; /* Border color */
+  background-color: #e6ddb5; /* Input background */
+
+  text-align: center; /* Center-align the text inside */
+
+  font-family: 'ost_italic'; /* Font family while typing */
+  font-weight: bolder;
+  font-size: 25px; /* Font size */
+  letter-spacing: 2px;
+  
+  
+  transition: all 0.4s ease-in-out; /* Smooth transition on focus */
+}
+
+/* Placeholder styling */
+body div#typing_container div#typing #typebar::placeholder {
+  color: #AAA; /* Lighter color for placeholder text */
+  font-family: 'ost_italic'; /* Italic font for placeholder */
+  font-size: 25px;
+  text-align: center;
+}
+
+/* Focused state - when user is typing */
+body div#typing_container div#typing input:focus {
+  color: #1B1717; /* Change text color when focused */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   @keyframes marquee-move-text {
