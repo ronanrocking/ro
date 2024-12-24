@@ -72,8 +72,19 @@ body .marquee-text  p {
     padding: 0rem 0rem;
     margin: 10px;
     height: 100%;
+    border-radius: 50px;
+    
+    transition: all 0.4s ease-in-out; /* Smooth transition on focus */
 
+    
+  }
 
+  body .marquee-text  p:hover{
+    background-color: #e6ddb5;
+    border-radius: 50px;
+    
+    padding-left: 30px;
+    padding-right: 30px;
   }
 
 
@@ -107,26 +118,36 @@ body div#typing_container{
 
 body div#typing_container div#text{
   height: max-content;
-  width: 100%;
+  width: 70vw;
+  box-sizing: border-box;
 
   background-color: #EEEBDD;
   border-radius: 25px;
 
-  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  padding: 35px 50px;
+
+  transition: all 0.2s ease-in-out; /* Smooth transition on focus */
 
 
 
 
 }
 body div#typing_container div#text p{
-  text-align: center;
-  justify-content: center;
 
-  padding: 10px 70px;
-  font-size: 25px;
-  letter-spacing: 1px;
+  padding: 0px 3px;
+  margin: 0px 7px;
+
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-weight: 500;
 
   overflow: hidden;
+
+  border-radius: 25px;
 }
 
 body div#typing_container div#typing{
@@ -221,9 +242,9 @@ body .buttons .button{
   border-color: #810000;
   color: #810000;
   border: 2px solid;
-  padding: 10px 30px;
+  padding: 10px 10px;
 
-  width: 60px;
+  width: 70px;
 
   justify-content: center;
   text-align: center;
@@ -242,7 +263,7 @@ body .buttons .button:hover{
   color: #1B1717;
   cursor: pointer;
 
-  width: 75px;
+  width: 60px;
 }
 
 body .buttons .button p{
@@ -274,8 +295,11 @@ body .stats_container .score{
   font-weight: light;
   letter-spacing: 1px;
 
-  
+  padding: 0px 30px;
   margin: 0px;
+  border-radius: 25px;
+
+  transition: all 0.7s ease-in-out; /* Smooth transition on focus */
 }
 
 .score p{
@@ -283,6 +307,8 @@ body .stats_container .score{
   margin: 0;
   
   color: #e6ddb5;
+
+  
 }
 
 
