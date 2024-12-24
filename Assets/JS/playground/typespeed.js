@@ -292,10 +292,14 @@ function end_test() {
 
 
 function ready_for_test(text, words_list_dummy) {
-    /*document.querySelectorAll('*').forEach(element => {
-        element.style.cssText = ''; // Clear inline styles
-        
-      });*/
+    document.querySelectorAll('*').forEach(element => {
+        // Skip elements with specific IDs
+        if (element.id === 'number_toggle' || element.id === 'case_toggle') {
+          return;  // Skip this iteration
+        }
+      
+        element.style.cssText = '';  // Reset all styles
+      });
 
 
 
