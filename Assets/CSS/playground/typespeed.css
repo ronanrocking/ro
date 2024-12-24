@@ -1,7 +1,9 @@
 @font-face {
     font-family: 'ost_italic'; /* The name you'll use in your CSS */
     src: url('../../Fonts/Antipasto_extralight.otf') format('truetype'); /* Path to the .otf file */ }
-
+@font-face {
+      font-family: 'ost_bold'; /* The name you'll use in your CSS */
+      src: url('../../Fonts/Antipasto_extrabold.otf') format('truetype'); /* Path to the .otf file */ }
 
 body{
     background-color: #1B1717;
@@ -9,6 +11,8 @@ body{
     padding: 0;
 
     font-family: "ost_italic";
+
+    transition: all 0.4s ease-in-out; /* Smooth transition on focus */
 }
 
 body .marquee-text {
@@ -54,7 +58,9 @@ body .marquee-text  #dots {
 #dot_container p{
     font-weight: bold;
     font-size: 70px;
-    color: #EEEBDD;
+    color: #e6ddb5;
+
+    
 }
   
 body .marquee-text  p {
@@ -66,7 +72,11 @@ body .marquee-text  p {
     padding: 0rem 0rem;
     margin: 10px;
     height: 100%;
+
+
   }
+
+
   
 
 
@@ -148,7 +158,7 @@ body div#typing_container div#typing #typebar {
   text-align: center; /* Center-align the text inside */
 
   font-family: 'ost_italic'; /* Font family while typing */
-  font-weight: bolder;
+  
   font-size: 25px; /* Font size */
   letter-spacing: 2px;
   
@@ -162,21 +172,118 @@ body div#typing_container div#typing #typebar::placeholder {
   font-family: 'ost_italic'; /* Italic font for placeholder */
   font-size: 25px;
   text-align: center;
+  font-weight: light;
 }
 
 /* Focused state - when user is typing */
 body div#typing_container div#typing input:focus {
   color: #1B1717; /* Change text color when focused */
+  font-weight: bold;
+
+
 }
 
 
 
 
+body div.stats{
+  width: 100%;
+  height: max-content;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding-top: 15px;
+}
+
+body div.stats div.stats_container{
+  width: 70vw;
+  
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 
+body .buttons{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+body .buttons .button{
+  display: flex;
+  flex-direction: row;
+
+  border-radius: 25px;
+  border-color: #810000;
+  color: #810000;
+  border: 2px solid;
+  padding: 10px 30px;
+
+  width: 60px;
+
+  justify-content: center;
+  text-align: center;
+
+  font-family: "ost_italic";
+  font-weight: light;
+  font-size: 22px;
+  letter-spacing: 1px;
+
+  transition: all 0.1s ease-in-out; /* Smooth transition on focus */
+  
+}
+
+body .buttons .button:hover{
+  background-color: #810000;
+  color: #1B1717;
+  cursor: pointer;
+
+  width: 75px;
+}
+
+body .buttons .button p{
+  padding: 0;
+  margin: 0;
+
+  color: #e6ddb5;
+}
 
 
+body .buttons .button#restart{
+      width: 10vw;
+      background-color: #810000;
+}
 
+body .buttons .button#restart:hover{
+  width: 15vw;
+  background-color: #81000095;
+}
+
+
+body .stats_container .score{
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+
+  font-family: "ost_italic";
+  font-size: 22px;
+  font-weight: light;
+  letter-spacing: 1px;
+
+  
+  margin: 0px;
+}
+
+.score p{
+  padding: 10px 0px;
+  margin: 0;
+  
+  color: #e6ddb5;
+}
 
 
 
