@@ -5,43 +5,43 @@ async function fetchRandomArticleWords(X, allowSpecialAndNumbers, setCapitalizat
     try {
         let result = await fetchArticle(X, apiUrlIntro, apiUrlFull, allowSpecialAndNumbers, setCapitalization);
         
-        // Retry if the page is too short
+        //page is too short
         while (result.split(' ').length < X) {
             console.log('Page is too short, retrying...');
             result = await fetchArticle(X, apiUrlIntro, apiUrlFull, allowSpecialAndNumbers, setCapitalization);
         }
         
-        return result; // Return the result as a string
+        return result;
     } catch (error) {
         console.error('Error fetching data:', error);
-        return null; // Return null in case of error
+        return null;
     }
 }
 
-// Helper function to fetch an article and return the first X words
+
 async function fetchArticle(X, apiUrlIntro, apiUrlFull, allowSpecialAndNumbers, setCapitalization) {
     const responseIntro = await fetch(apiUrlIntro);
     const dataIntro = await responseIntro.json();
 
-    // Extract page details
+    //page details
     const pageIntro = Object.values(dataIntro.query.pages)[0]; // Random page intro
     let extract = pageIntro.extract;
 
-    // If the intro doesn't provide enough words, fetch the full page
+    //intro doesn't provide enough words, fetch the full page
     if (extract.split(' ').length < X) {
         console.log('Intro is too short, fetching full page...');
-        const responseFull = await fetch(apiUrlFull);  // Fetch the full page content
+        const responseFull = await fetch(apiUrlFull);  
         const dataFull = await responseFull.json();
         
-        const pageFull = Object.values(dataFull.query.pages)[0]; // Full page content
-        extract = pageFull.extract;  // Get full page extract
+        const pageFull = Object.values(dataFull.query.pages)[0]; //full page content
+        extract = pageFull.extract; 
     }
 
-    // Process text based on arguments
+
     return processText(extract, X, allowSpecialAndNumbers, setCapitalization);
 }
 
-// Function to process text: handle special characters, numbers, and capitalization
+//handle special characters, numbers, and capitalization
 function processText(text, X, allowSpecialAndNumbers, setCapitalization) {
     
     text = text.replace(/[^\x00-\x7F]/g, ''); // Remove non-ASCII characters
@@ -61,7 +61,7 @@ function processText(text, X, allowSpecialAndNumbers, setCapitalization) {
     return getFirstXWords(text, X);
 }
 
-// Function to extract the first X words
+//extract the first X words
 function getFirstXWords(text, X) {
     const words = text.split(' ');  // Split the text into an array of words
     const wordCount = words.length;  // Get the number of words in the text
@@ -237,8 +237,9 @@ function typebar_active(){
 
     }
 
+    console.log(words_list.length)
     //end condition
-    if (current_index > words_list.length - 1) {
+    if (current_index >= words_list.length - 2) {
         console.log("end");
         end_test();
 
