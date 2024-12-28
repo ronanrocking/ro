@@ -1,0 +1,118 @@
+@font-face {
+    font-family: 'OpenSans';
+    src: url('../../Fonts/brillant/brillant.otf') format('truetype');
+}
+
+
+body{
+    background-color: black;
+    font-family: 'OpenSans';
+
+    margin: 0px;
+    padding: 0px;
+
+    font-weight: 100;
+
+    box-sizing: border-box;
+}
+
+body div.container{
+    width: 100%;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+body div#title h1{
+    color: white;
+    font-size: 3em;
+
+    letter-spacing: 7px;
+    font-weight: 100;
+
+
+    margin: 40px 0px 0px 0px;
+
+
+}
+
+hr.divider{
+    width: 86vw;
+    color: rgba(255, 255, 255, 0.316);
+}
+
+body div.container#galleries{
+    padding: 0px 7vw;
+    box-sizing: border-box;
+    
+    
+}
+
+body div#galleries h2#galleries{
+    color: white;
+    font-size: 2em;
+
+    margin: 30px 0px 20px 0px;
+    box-sizing: border-box;
+
+    text-align: left;
+    
+    width: 100%;
+
+    font-size: 23px;
+    letter-spacing: 5px;
+}
+
+
+
+
+.gallery {
+    margin-bottom: 20px;
+}
+
+.gallery-title {
+    cursor: pointer;
+    font-size: 1.5em;
+    background-color: #0e0e0e;
+    padding: 10px;
+    color: white;
+    letter-spacing: 2px;
+    border: 1px solid white;
+    text-align: center;
+    width: 85vw;
+    transition: all 0.6s ease;
+}
+
+.gallery-title:hover {
+    background-color: white;
+    font-weight: bold;
+    color: black;
+}
+
+.gallery-images {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Creates multiple columns */
+    gap: 15px; /* Space between images */
+    padding: 10px; /* Space inside the container */
+}
+
+.gallery-images img {
+    width: 100%; /* Ensures the image fills the column */
+    height: auto; /* Maintain the aspect ratio */
+    object-fit: cover; /* Ensures the image covers the space within the grid */
+    object-position: center; /* Centers the image */
+    border-radius: 8px; /* Optional: rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: shadow */
+    transition: transform 0.3s ease; /* Optional: smooth hover effect */
+}
+
+.gallery-images img:hover {
+    transform: scale(1.05); /* Zoom effect on hover */
+}
+
+
+
